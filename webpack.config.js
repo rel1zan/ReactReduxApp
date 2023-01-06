@@ -12,6 +12,9 @@ module.exports = {
     devServer: {
         port:8000
     },
+    resolve: {
+        extensions: ['.js', '.jsx'],
+    },
     plugins: [
         new HTMLWebpackPlugin({template: "./src/index.html"}),
         new CleanWebpackPlugin()
