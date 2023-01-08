@@ -3,14 +3,16 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
+    devtool: "eval-cheap-source-map",
     mode: "development",
     entry: ["@babel/polyfill", "./src/index.jsx"],
     output: {
         path: path.resolve(__dirname, "dist"),
-        filename: "[name].[hash].js"
+        filename: "[name].[hash].js",
+        sourceMapFilename: "[name].js.map"
     },
     devServer: {
-        port:8000
+        port: 8000
     },
     resolve: {
         extensions: ['.js', '.jsx'],
@@ -28,6 +30,11 @@ module.exports = {
             {
                 test: /\.(jpg|jpeg|svg)/,
                 use: ["file-loader"]
+            },
+            {
+                test: /\.js$/,
+                enforce: 'pre',
+                use: ['source-map-loader'],
             },
             {
                 test: /\.m?js$/,
