@@ -2,7 +2,7 @@ import axios from "axios";
 import {setIsFetching, setRepos} from "../../reducers/reposReducer";
 
 export const getRepos = (searchQuery = "stars:%3E1") => {
-    if (searchQuery == "") {
+    if (searchQuery === "") {
         searchQuery = "stars:%3E1"
     }
     return async (dispatch) => {

@@ -8,13 +8,7 @@ const App = () => {
     const dispatch = useDispatch()
 
     return (
-        <BrowserRouter>
-            <div className="container">
-                <Routes>
-                    <Route path="/" component={Main}/>
-                </Routes>
-            </div>
-        </BrowserRouter>
+        <Main/>
     );
 };
 

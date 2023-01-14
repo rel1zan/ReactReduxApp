@@ -16,7 +16,7 @@ const Main = () => {
     function searchHandler() {
         dispatch(getRepos(searchValue))
     }
-
+    
     return (
         <div>
             <div className="search">
@@ -28,7 +28,7 @@ const Main = () => {
             {
                 isFetching === false
                     ?
-                    repos.map(repo => <Repo repo={repo}/>)
+                    repos.map(repo => <Repo key={repo.id} repo={repo}/>)
                     :
                     <div className="fetching">
 
