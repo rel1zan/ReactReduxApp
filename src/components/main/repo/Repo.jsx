@@ -7,10 +7,10 @@ const Repo = (props) => {
     return (
         <div className="repo">
             <div className="repo-header">
-                <div className="repo-header-name">{repo.name}</div>
+                <div className="repo-header-name">Название: {repo.name}</div>
                 <div className="repo-header-stars">Количество звёзд: {repo.stargazers_count}</div>
             </div>
-            <div className="repo-list-commit">Последний коммит {repo.updated_at}</div>
+            <div className="repo-list-commit">Последний коммит: {repo.updated_at}</div>
             <a href={repo.html_url} className="repo-link">Ссылка на репозиторий: {repo.html_url}</a>
         </div>
     );
