@@ -12,7 +12,8 @@ module.exports = {
         sourceMapFilename: "[name].js.map"
     },
     devServer: {
-        port: 8000
+        port: 8000,
+        historyApiFallback: true
     },
     resolve: {
         extensions: ['.js', '.jsx'],
