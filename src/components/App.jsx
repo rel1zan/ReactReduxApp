@@ -1,7 +1,7 @@
 import React from 'react';
 import './app.less'
 import {useDispatch, useSelector} from "react-redux";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {BrowserRouter, Redirect, Route, Switch} from "react-router-dom";
 import Main from "./main/Main";
 import Card from "./card/card";
 
@@ -12,10 +12,11 @@ const App = () => {
 
         <BrowserRouter>
             <div className="container">
-                <Routes>
+                <Switch>
                     <Route exact path="/" component={Main}/>
                     <Route path="/card" component={Card}/>
-                </Routes>
+                    <Redirect to="/"/>
+                </Switch>
             </div>
         </BrowserRouter>
     );
